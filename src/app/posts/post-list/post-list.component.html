@@ -1,0 +1,12 @@
+<div>
+    <button (click)="createPost()">Create Post</button>
+    <form #form="ngForm" (ngSubmit)="addPost(form)">
+        <input type="text" name="title" [(ngModel)]="title">
+        <input type="text" name="image" [(ngModel)]="image">
+        <input type="text" name="content" [(ngModel)]="content">
+        <input type="submit" value="Submit">
+    </form>
+    <div *ngFor="let item of data | async">
+        title: {{item.title}}<br> content: {{item.content}}<br> img: <img [src]="item.image"><br><br>
+    </div>
+</div>
